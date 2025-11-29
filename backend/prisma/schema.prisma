@@ -1,0 +1,27 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+model WeddingDetails {
+  id        String   @id @default(cuid())
+  coupleName String
+  weddingDate DateTime
+  location   String
+  description String?
+  rsvp       RSVP[]
+  photoGallery PhotoGallery[]
+}
+model RSVP {
+  id            String   @id @default(cuid())
+  guestName     String
+  numberOfGuests Int
+  attending     Boolean
+  weddingDetailsId String
+  weddingDetails  WeddingDetails @relation(fields: [weddingDetailsId], references: [id])
+}
+model PhotoGallery {
+  id            String   @id @default(cuid())
+  photoUrl      String
+  weddingDetailsId String
+  weddingDetails  WeddingDetails @relation(fields: [weddingDetailsId], references: [id])
+}
