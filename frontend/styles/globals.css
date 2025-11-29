@@ -1,0 +1,47 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.bg-primary {
+  background-color: rgba(37, 99, 235, 1);
+}
+
+.bg-secondary {
+  background-color: rgba(16, 185, 129, 1);
+}
+
+.bg-dark {
+  background-color: rgba(107, 114, 128, 1);
+}
+
+.bg-light {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.text-primary {
+  color: rgba(37, 99, 235, 1);
+}
+
+.text-secondary {
+  color: rgba(16, 185, 129, 1);
+}
+
+.text-dark {
+  color: rgba(107, 114, 128, 1);
+}
+
+.text-light {
+  color: rgba(255, 255, 255, 1);
+}
