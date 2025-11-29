@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const weddingDetailsController = require('./weddingDetailsController');
+const rsvpController = require('./rsvpController');
+const galleryController = require('./galleryController');
+router.get('/api/wedding-details', weddingDetailsController.getWeddingDetails);
+router.post('/api/rsvp', rsvpController.createRsvp);
+router.get('/api/gallery', galleryController.getGallery);
+router.post('/api/gallery', galleryController.createGallery);
+module.exports = router;
