@@ -1,0 +1,13 @@
+const express = require('express');
+const app = express();
+const prisma = require('./prisma');
+const auth = require('./auth');
+const weddingDetailsRouter = require('./routes/weddingDetails');
+const rsvpRouter = require('./routes/rsvp');
+const photoGalleryRouter = require('./routes/photoGallery');
+app.use(express.json());
+app.use('/api/wedding-details', weddingDetailsRouter);
+app.use('/api/rsvp', rsvpRouter);
+app.use('/api/photo-gallery', photoGalleryRouter);
+app.use(auth);
+app.listen(3000, () => console.log('Server started on port 3000'));
